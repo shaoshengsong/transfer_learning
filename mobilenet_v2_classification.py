@@ -192,7 +192,7 @@ model_ft = model_ft.to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer_ft = optim.SGD(model_ft.parameters(), lr=0.001, momentum=0.9)
 exp_lr_scheduler = lr_scheduler.StepLR(optimizer_ft, step_size=7, gamma=0.1)
-model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,num_epochs=1)#25
+model_ft = train_model(model_ft, criterion, optimizer_ft, exp_lr_scheduler,num_epochs=51)#25
 visualize_model(model_ft)
 
 torch.save(model_ft, os.path.join( "./mobilenetv2_classification.pth"))
